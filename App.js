@@ -1,59 +1,108 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { View, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-web';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.box1} />
-      <View style={styles.box3} />
+  export default function App() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text>LOGO</Text>
+        <View style={styles.menu}></View></View>
+        <View style={styles.content}>
+          <View style={styles.card1}>
+            <Text style={styles.cardTitle}>Título do Card</Text>
+            <Text>Conteúdo do card aqui.</Text>
+          </View>
+          <View style={styles.card2}>
+            <Text style={styles.cardTitle}>Título do Card</Text>
+            <Text>Conteúdo do card aqui.</Text>
+          </View>
+          <View style={styles.Button}>
+            <Text style={styles.ButtonText}>Clique Aqui</Text>
+        </View>
+      </View>
+        <View style={styles.rodape}>
+          <Text style>Mateus</Text>
+          </View>
+        </View>
 
-      <Text style={styles.tituloPrincipal}>Titulo principal</Text>
-      <Text style={styles.subTitulo}>subtitulo</Text>
-      <Text>esse é paragrafo</Text>
-      <Text style={styles.saibaMais}>saiba mais</Text>
-      <Text style={styles.tituloPrincipal}>Titulo principal 2</Text>
-      <View style={styles.box2} />
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
+    )
+  }
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: "#2795dfff",
+      flex: 2,
+      justifyContent: "center",
+      alignItems: "center"
+    },
+     header: {
+      flex: 1,
+      width: "100%",
+      backgroundColor: "#ff0000ff",
+      justifyContent: "space-between",
+      alignItems: "center",
+      flexDirection: "row",
+      padding: 20
+    },
+    content: {
+      flex: 7,
+      width: "100%",
+      backgroundColor: "#00ff00ff"
+  },
+  menu: {
+    width: 40,
+    height: 40,
+    backgroundColor: "#0000ffff"
+  },
+    card1: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    margin: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5, 
+  },
+  cardTitle: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  card2: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    margin: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5, 
+  },
+  cardTitle: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  Button: {
+    backgroundColor: '#007bff',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginTop: 10,
+    marginHorizontal: 40,
+  },
+  ButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  rodape: {
     flex: 1,
-    backgroundColor: "#40e7b5ff",
+    width: "100%",
+    backgroundColor: "#ffff00ff",
     alignItems: "center",
     justifyContent: "center",
-  },
-  tituloPrincipal: {
-    fontSize: '20px',
     fontWeight: 'bold',
-    marginHorizontal:20
-  },
-  subTitulo: {
-    fontSize: '18px',
-    fontWeight: 'bold',
-    marginVertical: 20
-  },
-  saibaMais: {
-    fontSize: '14px',
-    color: "#464646"
-  },
-  box1: {
-    display: "flex",
-    width: '100%',
-    height: 80,
-    backgroundColor: "#f0f0f0",
-    justifyContent: "space-between",
-  },
-  box2: {
-    width: '100%',
-    height: 80,
-    backgroundColor: "#da1f1fff",
-  },
-  box3: {
-    width: 50,
-    height: 50,
-    backgroundColor: "#33b1d8ff",
-  },
-});
+  }
+})
