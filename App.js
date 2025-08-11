@@ -37,7 +37,7 @@ import { Button } from 'react-native-web';
      header: {
       flex: 1,
       width: "100%",
-      backgroundColor: "#ff0000ff",
+      backgroundColor: "#f19b9bff",
       justifyContent: "space-between",
       alignItems: "center",
       flexDirection: "row",
@@ -46,12 +46,12 @@ import { Button } from 'react-native-web';
     content: {
       flex: 7,
       width: "100%",
-      backgroundColor: "#00ff00ff"
+      backgroundColor: "#859985ff"
   },
   menu: {
     width: 40,
     height: 40,
-    backgroundColor: "#0000ffff"
+    backgroundColor: "#3d3ddbff"
   },
     card1: {
     backgroundColor: '#fff',
@@ -100,7 +100,7 @@ import { Button } from 'react-native-web';
   rodape: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#ffff00ff",
+    backgroundColor: "#f1f1c7ff",
     alignItems: "center",
     justifyContent: "center",
     fontWeight: 'bold',
