@@ -1,23 +1,24 @@
-import {View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import {Image} from "expo-image";
 
- function Card() {
+function Card({ title, desc, img }) {
+
   return (
-    <View>
-      <View style={styles.card1}>
-                <Text style={styles.cardTitle}>Título do Card</Text>
-                <Text>Conteúdo do card aqui.</Text>
-              </View>
-              <View style={styles.card2}>
-                <Text style={styles.cardTitle}>Título do Card</Text>
-                <Text>Conteúdo do card aqui.</Text>
-              </View>
+    <View style={styles.card}>
+      <Image 
+      style={styles.image} 
+      source={img}
+      />
+      <View style={styles.info}>
+        <Text style={styles.h1}>{title}</Text>
+        <Text>{desc}</Text>
+      </View>
     </View>
-    
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  card1: {
+  card: {
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 20,
@@ -33,17 +34,28 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 10,
   },
-   card2: {
-    backgroundColor: '#fff',
+  image: {
+    width: 50,
+    height: 50,
+    backgroundColor: "#000",
     borderRadius: 10,
-    padding: 20,
-    margin: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 5, 
+    marginRight: 20,
+    justifyContent: "center",
+    alignItems: "center",
   },
+  text: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  cardText: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  cardText2: {
+    fontSize: 14,
+    color: "#555",
+    flexWrap: "wrap",
+  }
 });
 
 export default Card;

@@ -3,14 +3,14 @@ import {View, Text, StyleSheet } from "react-native";
  function Button() {
   return (
       <View style={styles.Button}>
-            <Text style={styles.ButtonText}>Clique Aqui</Text>
+            <Text style={styles.ButtonText}>Ver mais</Text>
         </View>
   );
 }
 
 const styles = StyleSheet.create({
   Button: {
-    backgroundColor: "#007bff",
+    backgroundColor: "#ad0000ff",
     padding: 10,
     borderRadius: 5,
     alignItems: "center",

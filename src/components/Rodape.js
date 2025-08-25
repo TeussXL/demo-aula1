@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
       rodape: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#859985ff",
+    backgroundColor: "#df3434ff",
     alignItems: "center",
     justifyContent: "center",
     fontWeight: 'bold',
