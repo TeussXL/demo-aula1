@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     width: "100%",
-    backgroundColor: "#771717ff",
+    backgroundColor: "#a72929ff",
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
