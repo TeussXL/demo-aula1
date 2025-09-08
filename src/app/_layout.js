@@ -50,6 +50,7 @@ export default function RootLayout() {
             ),
           }}
         />
+
         <Tabs.Screen
           name="sobreNos"
           options={{
@@ -59,6 +60,7 @@ export default function RootLayout() {
             ),
           }}
         />
+
         <Tabs.Screen
           name="contact"
           options={{

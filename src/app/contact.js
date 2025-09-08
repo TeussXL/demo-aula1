@@ -6,7 +6,7 @@ export default function Contact() {
     <View style={styles.container}>
       <Text>pagina de contato</Text>
       <Button title="Home" onPress={() => router.replace("/")} />
-        <Button title="Sobre" onPress={() => router.push("/sobreNos")} />
+      <Button title="Sobre" onPress={() => router.push("/sobreNos")} />
     </View>
   );
 }

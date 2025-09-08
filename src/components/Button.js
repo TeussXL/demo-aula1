@@ -1,10 +1,10 @@
-import {View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
- function Button() {
+function Button() {
   return (
-      <View style={styles.Button}>
-            <Text style={styles.ButtonText}>Ver mais</Text>
-        </View>
+    <View style={styles.Button}>
+      <Text style={styles.ButtonText}>Ver mais</Text>
+    </View>
   );
 }
 

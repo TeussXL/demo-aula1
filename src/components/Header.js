@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
-import {Image} from 'expo-image'
-import Feather from '@expo/vector-icons/Feather';
+import { Image } from "expo-image";
+import Feather from "@expo/vector-icons/Feather";
 
 function Header() {
   return (
     <View style={styles.header}>
       <View>
-        <Image style={styles.image}
-        source={require("../../assets/img/logoo.svg")}
+        <Image
+          style={styles.image}
+          source={require("../../assets/img/logoo.svg")}
         />
-        
       </View>
       <Feather name="menu" size={24} color="black" />
     </View>
@@ -94,14 +94,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     fontWeight: "bold",
   },
-   image: {
+  image: {
     width: 50,
     height: 50,
     borderRadius: 10,
     marginRight: 20,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });
 
 export default Header;
