@@ -15,7 +15,7 @@ export default function Signup() {
     const [avatar, setAvatar] = useState('')
 
 
-    const handleSignup = async () => {
+    const handleSingup = async () => {
 
 
         const profile = {
@@ -29,8 +29,8 @@ export default function Signup() {
         const response = await fetch("http://localhost:3333/profile", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-            },
+                'Content-Type': 'application/json',
+            },  
             body: JSON.stringify(profile),
         })
 
@@ -79,7 +79,7 @@ export default function Signup() {
             <View style={{ marginTop: 20 }}>
                 <Button
                     title='Cadastrar'
-                    onPress={handleSignup}
+                    onPress={handleSingup}
                 />
             </View>
         </View>
