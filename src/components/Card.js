@@ -14,6 +14,7 @@ function Card({ title, desc, img }) {
 }
 
 const styles = StyleSheet.create({
+ 
   card: {
     backgroundColor: "#fff",
     borderRadius: 10,
@@ -25,11 +26,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  cardTitle: {
-    fontWeight: "bold",
-    fontSize: 18,
-    marginBottom: 10,
-  },
   image: {
     width: 50,
     height: 50,
@@ -39,18 +35,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  text: {
+  info: {
     flex: 1,
-    justifyContent: "center",
+    flexDirection: "column",
   },
-  cardText: {
-    fontSize: 18,
+  h1: {
+    fontSize: 20,
     fontWeight: "bold",
-  },
-  cardText2: {
-    fontSize: 14,
-    color: "#555",
-    flexWrap: "wrap",
   },
 });
 

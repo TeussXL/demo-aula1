@@ -2,32 +2,30 @@ import { View, Text, Button, StyleSheet } from 'react-native'
 import { useRouter } from 'expo-router'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-export default function Login() {
+export default function Profile() {
 
     const router = useRouter()
 
-    const handleLogin = async () => {
-        //TODO: Fazer login
-        await AsyncStorage.setItem('logado', 'true')
-        router.replace('/home')
+
+    const handleLogout = async () => {
+        await AsyncStorage.removeItem('logado')
+        router.replace('/login')
     }
 
     return (
         <View style={styles.container}>
-            <Text>Inicializador</Text>
-
-            <Button 
-                title='Logar'
-                onPress={handleLogin}
-            />
-
-            <Button 
-                title='Cadastro'
-                onPress={() => router.push('/signup')}
-            />
+            <Text>Página de Perfil</Text>
             <Button 
                 title='Home'
-                onPress={() => router.navigate('/home')}
+                onPress={() => router.navigate('/')}
+            />
+            <Button 
+                title='Sobre'
+                onPress={() => router.push('/about')}
+            />
+            <Button 
+                title='Logout'
+                onPress={handleLogout}
             />
         </View>
     )

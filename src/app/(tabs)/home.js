@@ -1,29 +1,17 @@
-import { View, Text, StyleSheet } from "react-native";
-import Header from "../../components/Header";
-import Card from "../../components/Card";
-import Button from "../../components/Button";
-import Rodape from "../../components/Rodape";
-import { Link } from "expo-router";
+
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import Header from '../../components/Header'
+import Footer from '../../components/Rodape'
+import Card from '../../components/Card'
+import { Link } from 'expo-router'
 
 export default function Home() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-around",
-          width: "100%",
-          padding: 10,
-          backgroundColor: "#fff",
-        }}
-      >
-        <Link href={"contact"}>
-          <Text>Pagina Home</Text>
-        </Link>
-        <Link href={"sobreNos"}>
-          <Text>Sobre</Text>
-        </Link>
+      <View>
+        <Link href="contact"><Text>Contato</Text></Link>
+        <Link href="about"><Text>Sobre</Text></Link>
       </View>
       <View style={styles.content}>
         <Card
@@ -40,22 +28,27 @@ export default function Home() {
             "https://m.media-amazon.com/images/S/pv-target-images/9fd172a452587004a54251df846efdb16b3f2e808718c9dca35fe7ff68f508ac._SX1080_FMjpg_.jpg"
           }
         />
-        <Button />
+        <Card
+          title="Dexter"
+          desc="O serial killer de seriais killers"
+          img="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS0GcZEwXB7mvH56j8UXR8eUi3pF13hheM_f4-SlkFhjBx1LwpwXn7AbVm4_oXtluWZtf6GAw"  
+        />
       </View>
-      <Rodape />
-    </View>
-  );
+      <Footer />
+    </ScrollView>
+  )
 }
+
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#2795dfff",
-    flex: 2,
-    justifyContent: "center",
-    alignItems: "center",
+    flex: 1,
+    backgroundColor: "#ffffffff"
   },
   content: {
     flex: 7,
     width: "100%",
     backgroundColor: "#a5a5a5ff",
-  },
-});
+    padding: 15,
+    gap: 15
+  }
+}) 

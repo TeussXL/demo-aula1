@@ -1,119 +1,91 @@
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native'
-import { useRouter } from 'expo-router'
-import { useState } from 'react'
-
+import { View, Text, Button, StyleSheet, TextInput } from "react-native";
+import { useRouter } from "expo-router";
+import { useState } from "react";
 
 export default function Signup() {
+  const router = useRouter();
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [avatar, setAvatar] = useState("");
 
-    const router = useRouter()
+  const handleSignup = async () => {
+    const profile = {
+      name,
+      email,
+      pass,
+      avatar,
+    };
 
+    const response = await fetch("http://localhost:3333/profile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(profile),
+    });
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [pass, setPass] = useState('')
-    const [avatar, setAvatar] = useState('')
-
-
-    const handleSignup = async () => {
-
-
-        const profile = {
-            name,
-            email,
-            pass,
-            avatar
-        }
-
-
-        const response = await fetch("http://localhost:3333/profile", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(profile),
-        })
-
-
-        if (response.ok) {
-            console.log('Cadastrado com sucesso')
-        } else {
-            console.log('Erro ao cadastrar')
-        }
+    if (response.ok) {
+      console.log("Cadastrado com sucesso");
+    } else {
+      console.log("Erro ao cadastrar");
     }
+  };
 
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Cadastre-se</Text>
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Cadastre-se</Text>
+      <View style={styles.form}>
+        <Text>Nome</Text>
+        <TextInput style={styles.input} value={name} onChangeText={setName} />
+        <Text>Email</Text>
+        <TextInput style={styles.input} value={email} onChangeText={setEmail} />
+        <Text>Senha</Text>
+        <TextInput style={styles.input} value={pass} onChangeText={setPass} />
+        <Text>Avatar</Text>
+        <TextInput
+          style={styles.input}
+          value={avatar}
+          onChangeText={setAvatar}
+        />
+      </View>
 
-
-            <View style={styles.form}>
-            <Text>Nome</Text>
-                <TextInput
-                    style={styles.input}
-                    value={name}
-                    onChangeText={setName}
-                />
-                <Text>Email</Text>
-                <TextInput
-                    style={styles.input}
-                    value={email}
-                    onChangeText={setEmail}
-                />
-                <Text>Senha</Text>
-                <TextInput
-                    style={styles.input}
-                    value={pass}
-                    onChangeText={setPass}
-                />
-                <Text>Avatar</Text>
-                <TextInput
-                    style={styles.input}
-                    value={avatar}
-                    onChangeText={setAvatar}
-                />
-            </View>
-
-
-            <View style={{ marginTop: 20 }}>
-                <Button
-                    title='Cadastrar'
-                    onPress={handleSignup}
-                />
-            </View>
-        </View>
-    )
+      <View style={{ marginTop: 20 }}>
+        <Button title="Cadastrar" onPress={handleSignup} />
+      </View>
+    </View>
+  );
 }
 
-
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 20,
-    },
-    form: {
-        width: '90%',
-        alignItems: 'flex-start',
-        backgroundColor: '#f5f5f5',
-        padding: 20,
-        borderRadius: 10,
-        elevation: 2,
-        marginBottom: 10,
-    },
-    input: {
-        height: 40,
-        borderColor: '#000',
-        borderWidth: 1,
-        borderRadius: 5,
-        width: '100%',
-        marginBottom: 20,
-        paddingHorizontal: 10,
-    },
-})
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  form: {
+    width: "90%",
+    alignItems: "flex-start",
+    backgroundColor: "#f5f5f5",
+    padding: 20,
+    borderRadius: 10,
+    elevation: 2,
+    marginBottom: 10,
+  },
+  input: {
+    height: 40,
+    borderColor: "#000",
+    borderWidth: 1,
+    borderRadius: 5,
+    width: "100%",
+    marginBottom: 20,
+    paddingHorizontal: 10,
+  },
+});
